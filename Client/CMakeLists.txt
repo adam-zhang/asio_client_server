@@ -1,0 +1,6 @@
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11")
+set(sources main.cpp)
+find_package(Boost REQUIRED system)
+include_directories(${Boost_INCLUDE_DIRS})
+add_executable(client ${sources})
+target_link_libraries(client ${Boost_LIBRARIES} pthread)
